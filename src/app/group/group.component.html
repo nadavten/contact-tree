@@ -1,0 +1,9 @@
+<div *ngFor="let contact of contacts">
+  <div *ngIf="contact.type==='Group'">
+    <div class="name" (click)="contact.isShowGroup=!contact.isShowGroup">{{contact.name}}</div>
+    <group *ngIf="contact.isShowGroup" [contacts]="contact.contacts"></group>
+  </div>
+  <div class="name" *ngIf="contact.type==='Contact'">
+    {{contact.name}}
+  </div>
+</div>
